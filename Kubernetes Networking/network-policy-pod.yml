@@ -9,6 +9,13 @@ spec:
   containers:
     - name: nginx
       image: nginx
+      resources:
+        requests:
+          cpu: "50m"
+          memory: "64Mi"
+        limits:
+          cpu: "100m"
+          memory: "128Mi"
 ---
 apiVersion: v1
 kind: Pod
@@ -21,6 +28,13 @@ spec:
   containers:
     - name: busybox
       image: radial/busyboxplus:curl
+      resources:
+        requests:
+          cpu: "50m"
+          memory: "64Mi"
+        limits:
+          cpu: "100m"
+          memory: "128Mi"
       command:
         - sleep
-        - '3600'
+        - "3600"

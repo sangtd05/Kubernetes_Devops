@@ -6,6 +6,13 @@ spec:
   containers:
     - name: nginx
       image: nginx
+      resources:
+        requests:
+          cpu: "50m"
+          memory: "64Mi"
+        limits:
+          cpu: "100m"
+          memory: "128Mi"
   nodeSelector:
     disktype: ssd
 ---
@@ -17,6 +24,13 @@ spec:
   containers:
     - name: nginx
       image: nginx
+      resources:
+        requests:
+          cpu: "50m"
+          memory: "64Mi"
+        limits:
+          cpu: "100m"
+          memory: "128Mi"
   nodeName: k8s-worder-01
 ---
 apiVersion: v1
@@ -27,13 +41,16 @@ spec:
   containers:
     - name: app
       image: alpine
-      command:
-        - sleep
-        - '3600'
       resources:
         requests:
-          memory: 64Mi
-          cpu: 1000m
+          cpu: "50m"
+          memory: "64Mi"
+        limits:
+          cpu: "100m"
+          memory: "128Mi"
+      command:
+        - sleep
+        - "3600"
   nodeSelector:
     disktype: ssd
 ---
@@ -45,10 +62,13 @@ spec:
   containers:
     - name: app
       image: alpine
-      command:
-        - sleep
-        - '3600'
       resources:
         requests:
-          memory: 64Mi
-          cpu: 1000m
+          cpu: "50m"
+          memory: "64Mi"
+        limits:
+          cpu: "100m"
+          memory: "128Mi"
+      command:
+        - sleep
+        - "3600"

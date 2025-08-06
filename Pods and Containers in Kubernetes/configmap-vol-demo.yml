@@ -6,12 +6,19 @@ spec:
   containers:
     - name: configmap-vol-demo
       image: alpine
+      resources:
+        requests:
+          cpu: "50m"
+          memory: "64Mi"
+        limits:
+          cpu: "100m"
+          memory: "128Mi"
       command: ["sleep", "3600"]
       volumeMounts:
-      - name: player-map
-        mountPath: /etc/config/configMap
-      - name: player-secret
-        mountPath: /etc/config/secret
+        - name: player-map
+          mountPath: /etc/config/configMap
+        - name: player-secret
+          mountPath: /etc/config/secret
   volumes:
     # You set volumes at the Pod level, then mount them into containers inside that Pod
     - name: player-map

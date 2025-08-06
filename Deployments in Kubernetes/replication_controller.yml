@@ -13,6 +13,6 @@ spec:
         app: alipne-box
     spec:
       containers:
-      - name: alpine-box
-        image: alpine
-        command: ["sleep", "3600"]
+        - name: alpine-box
+          image: alpine
+          command: ["sleep", "3600"]

@@ -4,23 +4,23 @@ metadata:
   name: nginx-rules
 spec:
   rules:
-  - host: nginx-official.example.com
-    http:
-      paths:
-      - path: /
-        pathType: Exact
-        backend:
-          service:
-            name: nginx-official-service
-            port:
-              number: 80
-  - host: magical-nginx.example.com
-    http:
-      paths:
-      - path: /
-        pathType: Exact
-        backend:
-          service:
-            name: magical-nginx
-            port:
-              number: 80
+    - host: nginx-official.example.com
+      http:
+        paths:
+          - path: /
+            pathType: Exact
+            backend:
+              service:
+                name: nginx-official-service
+                port:
+                  number: 80
+    - host: magical-nginx.example.com
+      http:
+        paths:
+          - path: /
+            pathType: Exact
+            backend:
+              service:
+                name: magical-nginx
+                port:
+                  number: 80

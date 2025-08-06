@@ -10,8 +10,8 @@ data:
   # file-like keys
   base.properties: |
     enemy.types=aliens,monsters
-    player.maximum-lives=10   
+    player.maximum-lives=10
   user-interface.properties: |
     color.good=purple
     color.bad=yellow
-    allow.textmode=true  
+    allow.textmode=true

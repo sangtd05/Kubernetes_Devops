@@ -6,13 +6,20 @@ spec:
   containers:
     - name: configmap-demo
       image: alpine
+      resources:
+        requests:
+          cpu: "50m"
+          memory: "64Mi"
+        limits:
+          cpu: "100m"
+          memory: "128Mi"
       command: ["sleep", "3600"]
       env:
         # Define the environment variable
         - name: PLAYER_LIVES
           valueFrom:
             configMapKeyRef:
-              name: player-pro-demo  # The ConfigMap this value comes from.
+              name: player-pro-demo # The ConfigMap this value comes from.
               key: player_lives # The key to fetch.
         - name: PROPERTIES_FILE_NAME
           valueFrom:

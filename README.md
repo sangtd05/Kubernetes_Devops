@@ -47,7 +47,7 @@ Follow these steps to get started with Kubernetes DevOps:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/anshulc55/Kubernetes_Devops.git
+   git clone https://github.com/sangtd05/Kubernetes_Devops.git
    ```
 
 2. Navigate to the project directory:

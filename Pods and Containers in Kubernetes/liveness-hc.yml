@@ -6,6 +6,13 @@ spec:
   containers:
     - name: liveness
       image: k8s.gcr.io/busybox
+      resources:
+        requests:
+          cpu: "50m"
+          memory: "64Mi"
+        limits:
+          cpu: "100m"
+          memory: "128Mi"
       args:
         - /bin/sh
         - -c
@@ -27,6 +34,13 @@ spec:
   containers:
     - name: liveness-nginx
       image: k8s.gcr.io/nginx
+      resources:
+        requests:
+          cpu: "50m"
+          memory: "64Mi"
+        limits:
+          cpu: "100m"
+          memory: "128Mi"
       livenessProbe:
         httpGet:
           path: /

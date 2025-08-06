@@ -14,7 +14,14 @@ spec:
     spec:
       containers:
         - name: magical-nginx
-          image: 'anshuldevops/magicalnginx:latest'
+          image: "anshuldevops/magicalnginx:latest"
+          resources:
+            requests:
+              cpu: "50m"
+              memory: "64Mi"
+            limits:
+              cpu: "100m"
+              memory: "128Mi"
           ports:
             - name: nginx-port
               containerPort: 3000

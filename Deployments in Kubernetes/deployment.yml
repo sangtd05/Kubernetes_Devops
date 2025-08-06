@@ -24,6 +24,13 @@ spec:
           args:
             - "-c"
             - echo Hello from the Chef container; sleep 3600
+          resources:
+            requests:
+              memory: "128Mi"
+              cpu: "250m"
+            limits:
+              memory: "256Mi"
+              cpu: "500m"
         - name: ubuntu
           image: "ubuntu:18.04"
           ports:
@@ -33,3 +40,10 @@ spec:
           args:
             - "-c"
             - echo Hello from the Ubantu container; sleep 3600
+          resources:
+            requests:
+              memory: "128Mi"
+              cpu: "250m"
+            limits:
+              memory: "256Mi"
+              cpu: "500m"

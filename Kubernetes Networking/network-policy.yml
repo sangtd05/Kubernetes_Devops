@@ -8,13 +8,13 @@ spec:
     matchLabels:
       app: frontend
   policyTypes:
-  - Ingress
-  - Egress
+    - Ingress
+    - Egress
   ingress:
     - from:
-      - namespaceSelector:
-          matchLabels:
-            role: test-network-policy
+        - namespaceSelector:
+            matchLabels:
+              role: test-network-policy
       ports:
-      - protocol: TCP
-        port: 80
+        - protocol: TCP
+          port: 80

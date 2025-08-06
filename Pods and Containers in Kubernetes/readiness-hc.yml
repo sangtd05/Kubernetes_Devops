@@ -6,6 +6,13 @@ spec:
   containers:
     - name: nginx
       image: k8s.gcr.io/nginx
+      resources:
+        requests:
+          cpu: "50m"
+          memory: "64Mi"
+        limits:
+          cpu: "100m"
+          memory: "128Mi"
       livenessProbe:
         httpGet:
           path: /

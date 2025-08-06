@@ -9,7 +9,7 @@ spec:
   replicas: 3
   selector:
     matchExpressions:
-      - {key: tier, operator: In, values: [frontend]}
+      - { key: tier, operator: In, values: [frontend] }
   template:
     metadata:
       labels:
@@ -17,7 +17,7 @@ spec:
         tier: frontend
     spec:
       containers:
-      - name: nginx
-        image: nginx
-        ports:
-        - containerPort: 80
+        - name: nginx
+          image: nginx
+          ports:
+            - containerPort: 80

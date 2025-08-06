@@ -7,10 +7,22 @@ spec:
   containers:
     - name: busybox
       image: busybox
-      command: ["sh", "-c", "echo Hello Team, This is Persistnent Volume Claim >> /output/success.txt"]
+      resources:
+        requests:
+          cpu: "50m"
+          memory: "64Mi"
+        limits:
+          cpu: "100m"
+          memory: "128Mi"
+      command:
+        [
+          "sh",
+          "-c",
+          "echo Hello Team, This is Persistnent Volume Claim >> /output/success.txt",
+        ]
       volumeMounts:
-      - mountPath: /output
-        name: my-pv
+        - mountPath: /output
+          name: my-pv
   volumes:
     - name: my-pv
       persistentVolumeClaim:

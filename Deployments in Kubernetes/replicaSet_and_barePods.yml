@@ -6,11 +6,17 @@ metadata:
     tier: frontend
 spec:
   containers:
-  - name: application1
-    image: gcr.io/google-samples/hello-app:1.0
+    - name: application1
+      image: gcr.io/google-samples/hello-app:1.0
+      resources:
+        requests:
+          memory: "64Mi"
+          cpu: "250m"
+        limits:
+          memory: "128Mi"
+          cpu: "500m"
 
 ---
-
 apiVersion: v1
 kind: Pod
 metadata:
@@ -19,5 +25,12 @@ metadata:
     tier: frontend
 spec:
   containers:
-  - name: application2
-    image: gcr.io/google-samples/hello-app:2.0
+    - name: application2
+      image: gcr.io/google-samples/hello-app:2.0
+      resources:
+        requests:
+          memory: "64Mi"
+          cpu: "250m"
+        limits:
+          memory: "128Mi"
+          cpu: "500m"

@@ -6,6 +6,13 @@ spec:
   containers:
     - name: nginx
       image: nginx
+      resources:
+        requests:
+          cpu: "50m"
+          memory: "64Mi"
+        limits:
+          cpu: "100m"
+          memory: "128Mi"
   affinity:
     nodeAffinity:
       requiredDuringSchedulingIgnoredDuringExecution:
@@ -24,6 +31,13 @@ spec:
   containers:
     - name: nginx
       image: nginx
+      resources:
+        requests:
+          cpu: "50m"
+          memory: "64Mi"
+        limits:
+          cpu: "100m"
+          memory: "128Mi"
   affinity:
     nodeAffinity:
       requiredDuringSchedulingIgnoredDuringExecution:

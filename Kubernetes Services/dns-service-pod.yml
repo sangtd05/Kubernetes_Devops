@@ -9,4 +9,11 @@ spec:
       image: radial/busyboxplus:curl
       command:
         - sleep
-        - '3600'
+        - "3600"
+      resources:
+        requests:
+          memory: "64Mi"
+          cpu: "50m"
+        limits:
+          memory: "128Mi"
+          cpu: "100m"

@@ -4,13 +4,16 @@ metadata:
   name: frontend-1
 spec:
   containers:
-  - name: app
-    image: alpine
-    command: ["sleep", "3600"]
-    resources:
-      requests:
-        memory: "64Mi"
-        cpu: "250m"
+    - name: app
+      image: alpine
+      resources:
+        requests:
+          cpu: "50m"
+          memory: "64Mi"
+        limits:
+          cpu: "100m"
+          memory: "128Mi"
+      command: ["sleep", "3600"]
 ---
 apiVersion: v1
 kind: Pod
@@ -18,13 +21,16 @@ metadata:
   name: frontend-2
 spec:
   containers:
-  - name: app
-    image: alpine
-    command: ["sleep", "3600"]
-    resources:
-      requests:
-        memory: "64Mi"
-        cpu: "250m"
+    - name: app
+      image: alpine
+      resources:
+        requests:
+          cpu: "50m"
+          memory: "64Mi"
+        limits:
+          cpu: "100m"
+          memory: "128Mi"
+      command: ["sleep", "3600"]
 ---
 apiVersion: v1
 kind: Pod
@@ -32,13 +38,16 @@ metadata:
   name: frontend-3
 spec:
   containers:
-  - name: app
-    image: alpine
-    command: ["sleep", "3600"]
-    resources:
-      requests:
-        memory: "64Mi"
-        cpu: "250m"
+    - name: app
+      image: alpine
+      resources:
+        requests:
+          cpu: "50m"
+          memory: "64Mi"
+        limits:
+          cpu: "100m"
+          memory: "128Mi"
+      command: ["sleep", "3600"]
 ---
 apiVersion: v1
 kind: Pod
@@ -46,10 +55,13 @@ metadata:
   name: frontend-4
 spec:
   containers:
-  - name: app
-    image: alpine
-    command: ["sleep", "3600"]
-    resources:
-      requests:
-        memory: "64Mi"
-        cpu: "250m"
+    - name: app
+      image: alpine
+      resources:
+        requests:
+          cpu: "50m"
+          memory: "64Mi"
+        limits:
+          cpu: "100m"
+          memory: "128Mi"
+      command: ["sleep", "3600"]

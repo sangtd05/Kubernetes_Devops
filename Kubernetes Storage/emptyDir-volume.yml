@@ -4,11 +4,18 @@ metadata:
   name: redis-emptydir
 spec:
   containers:
-  - name: redis
-    image: redis
-    volumeMounts:
-    - name: redis-storage
-      mountPath: /data/redis
+    - name: redis
+      image: redis
+      resources:
+        requests:
+          cpu: "50m"
+          memory: "64Mi"
+        limits:
+          cpu: "100m"
+          memory: "128Mi"
+      volumeMounts:
+        - name: redis-storage
+          mountPath: /data/redis
   volumes:
-  - name: redis-storage
-    emptyDir: {}
+    - name: redis-storage
+      emptyDir: {}
